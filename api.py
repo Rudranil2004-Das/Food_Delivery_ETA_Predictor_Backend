@@ -16,10 +16,14 @@ features = package["features"]
 
 app = FastAPI(title="Food Delivery Time Predictor API")
 
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
-    allow_methods=["POST", "GET"],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://rudranil2004-das-food-delivery-eta.vercel.app",
+    ],
+    allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
 )
 
